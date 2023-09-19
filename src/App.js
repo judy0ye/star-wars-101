@@ -1,17 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { getCharacters } from './apiCalls';
+import Characters from './components/Characters/Characters';
 
 function App() {
+  const [characters, setCharacters] = useState([])
+ 
   useEffect(() => {
     getCharacters()
-    .then(data => console.log(data))
+    .then(data => setCharacters(data.results))
     .catch(err => console.log(err))
-  })
+  }, [])
 
   return (
-    <Header />
+    <main>
+      <Header />
+      <Characters characters={characters}/>
+    </main>
   );
 }
 
