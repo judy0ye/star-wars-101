@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: center;
+  background: black
+}
+
+h1 {
+  font-size: 3em;
+  font-family: Impact, sans-serif;
+  -webkit-text-stroke-width: .05em;
+  -webkit-text-stroke-color: #e2f534;
+  -webkit-text-fill-color: #0d0d0c;
+  /* text-shadow: 2px 4px 1.5px rgba(163, 163, 163, 0.98) */
+}
+
