@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import { getCharacters } from './apiCalls';
 import Characters from './components/Characters/Characters';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -16,7 +17,9 @@ function App() {
   return (
     <main>
       <Header />
-      <Characters characters={characters}/>
+      <Routes>
+        <Route path='/' element={<Characters characters={characters}/>}/>  
+      </Routes>
     </main>
   );
 }
