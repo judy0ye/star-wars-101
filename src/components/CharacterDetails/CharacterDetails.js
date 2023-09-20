@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
+import backLink from '../../assets/emojisky.com-11247001.png'
 // import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
 import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
@@ -17,7 +18,12 @@ function CharacterDetails() {
 
   return (
     <article >
-      <Link className='back-to-main-link' to={'/'}>Back to Main</Link>
+      <Link className='back-to-main-link' to={'/'}>
+        <div className='back'>
+          <img className='back-image'src={backLink} />Back to Main
+        </div>
+      </Link>
+      
       <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>

@@ -4,11 +4,27 @@
   background-size: cover;
   background-position: center; 
 }
+
 .back-to-main-link {
   position: absolute;
-  top: 18%; 
-  left: 5%; 
+  top: 23%; 
+  left: 2%; 
   transform: translate(-50%, -50%);
+	text-decoration:none;
+	color: #000000
+  
+}
+
+.back-image {
+  height: 4rem;
+  width: 4rem;
+  margin-left: 5rem
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 .selected-character-details-name {
   position: absolute;
@@ -16,7 +32,7 @@
   left: 50%; 
   transform: translate(-50%, -50%);
   
-  font-size: 3em;
+  font-size: 2.5em;
   color: #f0f8ff;
   background-color: #1e1c1c;
   opacity: 90%;
@@ -26,6 +42,7 @@
   box-shadow: inset -1px 1px 20px 4px rgba(226, 245, 51, 0.887);
   border-radius: 10px;
 }
+
 .selected-character-details-container {
   position: relative;
   margin-top: -20rem;
