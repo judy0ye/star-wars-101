@@ -5,6 +5,7 @@ import { getCharacters } from './apiCalls';
 import Characters from './components/Characters/Characters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetails from './components/CharacterDetails/CharacterDetails';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -18,11 +19,17 @@ function App() {
   return (
     <main>
       <Header />
-      <Routes>
-        <Route path='/' element={<Characters characters={characters}/>}/> 
-        <Route path='/character/:id' element={<CharacterDetails />}/> 
-      </Routes>
-    </main>
+      <section className='main-display'>
+        {/* <div className='navigation'>  */}
+          < Navigation />
+        {/* </div> */}
+        <Routes>
+          <Route path='/' element={<Characters characters={characters}/>}/> 
+          <Route path='/character/:id' element={<CharacterDetails />}/> 
+        </Routes>
+      </section>
+    </main> 
+  
   );
 }
 
