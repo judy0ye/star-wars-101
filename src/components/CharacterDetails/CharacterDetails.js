@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
-import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
+// import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
+import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 
@@ -15,7 +16,8 @@ function CharacterDetails() {
   }, [id])
 
   return (
-    <article  >
+    <article >
+      <Link className='back-to-main-link' to={'/'}>Back to Main</Link>
       <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>

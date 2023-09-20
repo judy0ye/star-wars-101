@@ -1,10 +1,15 @@
 .background-image {
   background-image: var(--backdrop-img);
-  padding-top: 50rem;
+  padding-top: 45rem;
   background-size: cover;
   background-position: center; 
 }
-
+.back-to-main-link {
+  position: absolute;
+  top: 18%; 
+  left: 5%; 
+  transform: translate(-50%, -50%);
+}
 .selected-character-details-name {
   position: absolute;
   top: 20%; 
@@ -18,7 +23,7 @@
   text-align: center;
   font-weight: bolder;
   padding: .5em;
-  box-shadow: inset -1px 1px 20px 4px hsla(0,0%,100%,1);
+  box-shadow: inset -1px 1px 20px 4px rgba(226, 245, 51, 0.887);
   border-radius: 10px;
 }
 .selected-character-details-container {
@@ -29,7 +34,7 @@
 .selected-character-details {
   display: flex;
   justify-content: center;
-  margin: 0 10rem;
+  margin: 0 8rem;
   border: 3px solid aliceblue;
   color: aliceblue;
   padding: 1em;
