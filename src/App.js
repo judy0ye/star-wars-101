@@ -20,7 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Characters characters={characters}/>}/> 
-        <Route path='/character/:id'/> 
+        <Route path='/character/:id' element={<CharacterDetails />}/> 
       </Routes>
     </main>
   );
