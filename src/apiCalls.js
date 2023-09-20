@@ -22,7 +22,17 @@ function getCharacters() {
   // return fetchAllCharcters()
 }
 
+function getSpecificCharacter(id) {
+  return fetch(`https://swapi.dev/api/people/${id}`)
+  .then(res => {
+    if (!res.ok) {
+      throw new Error (`${res.status}: Unable to retrieve from server`)
+    }
+    return res.json()
+  })
+}
 
 export {
-  getCharacters
+  getCharacters,
+  getSpecificCharacter
 }
