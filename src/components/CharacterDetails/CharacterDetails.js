@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import './CharacterDetails.css'
+import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 
@@ -11,17 +12,22 @@ function CharacterDetails() {
     getSpecificCharacter(id)
     .then(data => setSelectedCharacter(data))
     .catch(err => console.log(err))
-  })
+  }, [id])
 
   return (
-    <article>
-      <h2>{selectedCharacter.name}</h2>
-      <p>Height: {selectedCharacter.height} cm</p>
-      <p>Hair Color: {selectedCharacter.hairColor}</p>
-      <p>Eye Color: {selectedCharacter.eyeColor}</p>
-      <p>Skin Color: {selectedCharacter.skinColor}</p>
-      <p>Birth Year: {selectedCharacter.birthYear}</p>
-      <p>Gender: {selectedCharacter.gender}</p>
+    <article  >
+      <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
+      <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
+      <div className='selected-character-details-container'>
+        <div className='selected-character-details'>
+          <p>Height: {selectedCharacter.height} cm</p>
+          <p>Hair Color: {selectedCharacter.hair_color}</p>
+          <p>Eye Color: {selectedCharacter.eye_color}</p>
+          <p>Skin Color: {selectedCharacter.skin_color}</p>
+          <p>Birth Year: {selectedCharacter.birth_year}</p>
+          <p>Gender: {selectedCharacter.gender}</p>
+        </div>
+      </div>
     </article>
   )
 }

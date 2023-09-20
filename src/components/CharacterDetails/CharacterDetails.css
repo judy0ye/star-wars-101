@@ -1,0 +1,39 @@
+.background-image {
+  background-image: var(--backdrop-img);
+  padding-top: 50rem;
+  background-size: cover;
+  background-position: center; 
+}
+
+.selected-character-details-name {
+  position: absolute;
+  top: 20%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  
+  font-size: 3em;
+  color: #f0f8ff;
+  background-color: #1e1c1c;
+  opacity: 90%;
+  text-align: center;
+  font-weight: bolder;
+  padding: .5em;
+  box-shadow: inset -1px 1px 20px 4px hsla(0,0%,100%,1);
+  border-radius: 10px;
+}
+.selected-character-details-container {
+  position: relative;
+  margin-top: -20rem;
+}
+
+.selected-character-details {
+  display: flex;
+  justify-content: center;
+  margin: 0 10rem;
+  border: 3px solid aliceblue;
+  color: aliceblue;
+  padding: 1em;
+  background-color: #1e1c1c;
+  opacity: 95%;
+  gap: 3rem;  
+}
