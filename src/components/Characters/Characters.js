@@ -2,9 +2,10 @@ import './Characters.css'
 import Character from '../Character/Character'
 
 function Characters({characters}) {
-  const characterCards = characters.map(character => ( 
+  const characterCards = characters.map((character, index)=> ( 
     <Character 
       key={character.name}
+      id={index+1}
       name={character.name}
       height={character.height}
       hairColor={character.hair_color}

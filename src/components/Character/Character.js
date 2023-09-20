@@ -1,5 +1,6 @@
 import './Character.css'
 import favorite from '../../assets/emojisky.com-16967011.png'
+import { Link } from 'react-router-dom'
 
 function Character({name, height, hairColor, skinColor, eyeColor, birthYear, gender}) {
   return (
@@ -12,7 +13,7 @@ function Character({name, height, hairColor, skinColor, eyeColor, birthYear, gen
       <p>Birth Year: {birthYear}</p>
       <p>Gender: {gender}</p>
       <div>
-        <button>See more</button>
+        <Link>See more</Link>
         <img className='favorite' src={favorite}></img>
       </div>
     </div>
