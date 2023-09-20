@@ -2,7 +2,7 @@ function getCharacters() {
   let pageNum = 1
   const characters = []
 
-  const fetchAllCharcters = () => {
+  // const fetchAllCharcters = () => {
     return fetch(`https://swapi.dev/api/people/?page=${pageNum}`)
     .then(res => {
       if (!res.ok) {
@@ -10,16 +10,16 @@ function getCharacters() {
       }
       return res.json()
     })
-    .then(data => {
-      characters.push(...data.results)
-      if (data.next) {
-        pageNum++
-        return fetchAllCharcters()
-      }
-      return characters
-    })
-  }
-  return fetchAllCharcters()
+  //   .then(data => {
+  //     characters.push(...data.results)
+  //     if (data.next) {
+  //       pageNum++
+  //       return fetchAllCharcters()
+  //     }
+  //     return characters
+  //   })
+  // }
+  // return fetchAllCharcters()
 }
 
 
