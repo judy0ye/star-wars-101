@@ -2,13 +2,13 @@
   display: flex
 }
 
-.navigation {
+/* .navigation {
   display: flex;
   border: 3px solid black;
-  /* width: 10rem;
-  height: 10rem; */
+  width: 10rem;
+  height: 10rem;
 
-}
+} */
 
 /* .App {
   text-align: center;

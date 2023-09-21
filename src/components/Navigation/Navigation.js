@@ -1,10 +1,13 @@
 import './Navigation.css'
 
 function Navigation() {
+  const viewFavorites = () => {
+    
+  }
   return(
     <section className='navigation-bar'>
 
-      <button>View Favorites</button>
+      <button onClick={viewFavorites}>View Favorites</button>
       <button>View All</button>
     </section>
   )
