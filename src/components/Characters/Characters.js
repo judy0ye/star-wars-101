@@ -1,8 +1,8 @@
 import './Characters.css'
 import Character from '../Character/Character'
 
-function Characters({characters}) {
-  const characterCards = characters.map((character, index)=> ( 
+function Characters({characters, isFavorite, toggleFavorite}) {
+  const characterCards = characters.length > 0 && characters.map((character, index)=> ( 
     <Character 
       key={character.name}
       id={index+1}
@@ -13,6 +13,8 @@ function Characters({characters}) {
       eyeColor={character.eye_color}
       birthYear={character.birth_year}
       gender={character.gender}
+      isFavorite={isFavorite[character.name]}
+      toggleFavorite={toggleFavorite}
     />)
   )
   return (

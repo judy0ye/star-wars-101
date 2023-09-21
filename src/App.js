@@ -9,22 +9,37 @@ import Navigation from './components/Navigation/Navigation';
 
 function App() {
   const [characters, setCharacters] = useState([])
- 
+  const [isFavorite, setIsFavorite] = useState({})
+  
+  console.log({isFavorite})
+  
   useEffect(() => {
     getCharacters()
     .then(data => setCharacters(data.results))
     .catch(err => console.log(err))
   }, [])
 
+  const toggleFavorite = (name) => {
+    const updatedFavorites = {...isFavorite}
+    updatedFavorites[name] = !updatedFavorites[name]
+    
+    setIsFavorite(updatedFavorites)
+  }
+
+  
   return (
     <main>
       <Header />
       <section className='main-display'>
-        {/* <div className='navigation'>  */}
-          < Navigation />
+        {/* <div className='navigation'>  */}  
         {/* </div> */}
         <Routes>
-          <Route path='/' element={<Characters characters={characters}/>}/> 
+          <Route path='/' element={
+          <>
+            <Navigation /> 
+            <Characters toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
+          </>
+          }/> 
           <Route path='/character/:id' element={<CharacterDetails />}/> 
         </Routes>
       </section>
