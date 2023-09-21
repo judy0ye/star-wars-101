@@ -1,8 +1,10 @@
 import './Navigation.css'
 
-function Navigation() {
+function Navigation({characters, isFavorite, setCharacters}) {
   const viewFavorites = () => {
-    
+    const filtered = characters && characters.filter(character => isFavorite[character.name] )
+    console.log('filtered', filtered)
+    setCharacters(filtered)
   }
   return(
     <section className='navigation-bar'>

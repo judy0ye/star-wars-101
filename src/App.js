@@ -36,11 +36,11 @@ function App() {
         <Routes>
           <Route path='/' element={
           <>
-            <Navigation /> 
+            <Navigation characters={characters} setCharacters={setCharacters} isFavorite={isFavorite}/> 
             <Characters toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
           </>
           }/> 
-          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
+          <Route path='/character/:name' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
         </Routes>
       </section>
     </main> 
