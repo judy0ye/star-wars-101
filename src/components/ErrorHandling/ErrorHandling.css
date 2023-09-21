@@ -1,0 +1,24 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.error-img {
+  border-radius: 10px;
+  width: 55rem
+}
+
+.retry {
+  background: linear-gradient(to bottom, #4c5a6a 5%, #e3f533 100%);
+  border-radius: 10px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  margin-top: 1rem;
+  text-decoration: none;
+}
