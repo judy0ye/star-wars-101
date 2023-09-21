@@ -5,10 +5,15 @@ function Navigation({isFavorite, setFilteredCharacters, characters}) {
     const filtered = characters && characters.filter(character => isFavorite[character.name] )
     setFilteredCharacters(filtered)
   }
+
+  const viewAll = () => {
+    setFilteredCharacters(characters)
+  }
+
   return(
     <section className='navigation-bar'>
       <button onClick={viewFavorites}>View Favorites</button>
-      <button>View All</button>
+      <button onClick={viewAll}>View All</button>
     </section>
   )
 }

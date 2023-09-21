@@ -11,7 +11,6 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [isFavorite, setIsFavorite] = useState({})
   const [filteredCharacters, setFilteredCharacters] = useState([])
-  console.log({isFavorite})
   
   useEffect(() => {
     getCharacters()
