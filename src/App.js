@@ -12,13 +12,14 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [isFavorite, setIsFavorite] = useState({})
   const [filteredCharacters, setFilteredCharacters] = useState([])
+  const [error, setError] = useState('')
   
   useEffect(() => {
     getCharacters()
     .then(data => {
       setCharacters(data.results)
       setFilteredCharacters(data.results)})
-    .catch(err => console.log(err))
+    .catch(err => setError(err))
   }, [])
 
   const toggleFavorite = (name) => {
@@ -32,7 +33,7 @@ function App() {
   return (
     <main>
       <Header />
-      <ErrorHandling />
+      {error && <ErrorHandling error={error}/>}
       <section className='main-display'>
         <Routes>
           <Route path='/' element={
