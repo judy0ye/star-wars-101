@@ -12,7 +12,6 @@
   transform: translate(-50%, -50%);
 	text-decoration:none;
 	color: #000000
-  
 }
 
 .back-image {
@@ -26,6 +25,18 @@
   flex-direction: column;
   align-items: baseline;
 }
+
+.specific-character-favorite {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  top: 21%; 
+  right: 2%; 
+  transform: translate(-50%, -50%);
+	text-decoration:none;
+	color: #000000
+}
+
 .selected-character-details-name {
   position: absolute;
   top: 20%; 
