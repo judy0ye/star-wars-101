@@ -7,7 +7,13 @@
 }
 
 .favorite {
+  height: 3em;
+  width: 3em;
+  
+}
+
+/* .favorite:active {
   height: 2em;
   width: 2em;
-  opacity: 25%
-}
+  opacity: 90%
+} */

@@ -2,19 +2,27 @@ import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
 import backLink from '../../assets/emojisky.com-11247001.png'
 // import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
+import favorite from '../../assets/emojisky.com-16967011.png'
 import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 
-function CharacterDetails() {
+function CharacterDetails({toggleFavorite, isFavorite}) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const { id } = useParams()
 
+  
   useEffect(() => {
     getSpecificCharacter(id)
     .then(data => setSelectedCharacter(data))
     .catch(err => console.log(err))
   }, [id])
+
+  const imgOpacity = isFavorite[selectedCharacter.name] ? 0.9 : 0.25
+ 
+  const styleFavoriteImage = {
+    opacity: imgOpacity
+  }
 
   return (
     <article >
@@ -23,6 +31,11 @@ function CharacterDetails() {
           <img className='back-image'src={backLink} />Back to Main
         </div>
       </Link>
+      <div className='specific-character-favorite'>
+        <button onClick={() => toggleFavorite(selectedCharacter.name)}>
+          <img className='specific-character-favorite-image' style={styleFavoriteImage} src={favorite}></img>
+        </button>
+      </div>
       
       <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
