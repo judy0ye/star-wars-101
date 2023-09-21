@@ -19,7 +19,7 @@ function App() {
     .then(data => {
       setCharacters(data.results)
       setFilteredCharacters(data.results)})
-    .catch(err => setError(err))
+    .catch(error => setError(`${error.message}`))
   }, [])
 
   const toggleFavorite = (name) => {
@@ -42,7 +42,8 @@ function App() {
               <Characters filteredCharacters={filteredCharacters} toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
             </>
           }/> 
-          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
+          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite} setError={setError}/>}/> 
+          <Route path='*' element={<ErrorHandling />}/>
         </Routes>
       </section>
     </main> 
