@@ -6,6 +6,7 @@ import Characters from './components/Characters/Characters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetails from './components/CharacterDetails/CharacterDetails';
 import Navigation from './components/Navigation/Navigation';
+import ErrorHandling from './components/ErrorHandling/ErrorHandling';
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -31,15 +32,14 @@ function App() {
   return (
     <main>
       <Header />
+      <ErrorHandling />
       <section className='main-display'>
-        {/* <div className='navigation'>  */}  
-        {/* </div> */}
         <Routes>
           <Route path='/' element={
-          <>
-            <Navigation characters={characters} filteredCharacters={filteredCharacters} setFilteredCharacters={setFilteredCharacters} isFavorite={isFavorite}/> 
-            <Characters filteredCharacters={filteredCharacters} toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
-          </>
+            <>
+              <Navigation characters={characters} filteredCharacters={filteredCharacters} setFilteredCharacters={setFilteredCharacters} isFavorite={isFavorite}/> 
+              <Characters filteredCharacters={filteredCharacters} toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
+            </>
           }/> 
           <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
         </Routes>
