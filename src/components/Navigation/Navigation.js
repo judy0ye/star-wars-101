@@ -1,14 +1,12 @@
 import './Navigation.css'
 
-function Navigation({characters, isFavorite, setCharacters}) {
+function Navigation({isFavorite, setFilteredCharacters, characters}) {
   const viewFavorites = () => {
     const filtered = characters && characters.filter(character => isFavorite[character.name] )
-    console.log('filtered', filtered)
-    setCharacters(filtered)
+    setFilteredCharacters(filtered)
   }
   return(
     <section className='navigation-bar'>
-
       <button onClick={viewFavorites}>View Favorites</button>
       <button>View All</button>
     </section>

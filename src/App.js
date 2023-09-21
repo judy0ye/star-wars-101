@@ -10,12 +10,14 @@ import Navigation from './components/Navigation/Navigation';
 function App() {
   const [characters, setCharacters] = useState([])
   const [isFavorite, setIsFavorite] = useState({})
-  
+  const [filteredCharacters, setFilteredCharacters] = useState([])
   console.log({isFavorite})
   
   useEffect(() => {
     getCharacters()
-    .then(data => setCharacters(data.results))
+    .then(data => {
+      setCharacters(data.results)
+      setFilteredCharacters(data.results)})
     .catch(err => console.log(err))
   }, [])
 
@@ -36,11 +38,11 @@ function App() {
         <Routes>
           <Route path='/' element={
           <>
-            <Navigation characters={characters} setCharacters={setCharacters} isFavorite={isFavorite}/> 
-            <Characters toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
+            <Navigation characters={characters} filteredCharacters={filteredCharacters} setFilteredCharacters={setFilteredCharacters} isFavorite={isFavorite}/> 
+            <Characters filteredCharacters={filteredCharacters} toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
           </>
           }/> 
-          <Route path='/character/:name' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
+          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
         </Routes>
       </section>
     </main> 
