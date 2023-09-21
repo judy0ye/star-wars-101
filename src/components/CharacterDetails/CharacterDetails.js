@@ -7,15 +7,22 @@ import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 
-function CharacterDetails() {
+function CharacterDetails({toggleFavorite, isFavorite}) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const { id } = useParams()
 
+  
   useEffect(() => {
     getSpecificCharacter(id)
     .then(data => setSelectedCharacter(data))
     .catch(err => console.log(err))
   }, [id])
+
+  const imgOpacity = isFavorite[selectedCharacter.name] ? 0.9 : 0.25
+ 
+  const styleFavoriteImage = {
+    opacity: imgOpacity
+  }
 
   return (
     <article >
@@ -25,8 +32,8 @@ function CharacterDetails() {
         </div>
       </Link>
       <div className='specific-character-favorite'>
-        <button>
-          <img className='favorite'  src={favorite}></img>
+        <button onClick={() => toggleFavorite(selectedCharacter.name)}>
+          <img className='specific-character-favorite-image' style={styleFavoriteImage} src={favorite}></img>
         </button>
       </div>
       

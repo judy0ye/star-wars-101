@@ -37,6 +37,11 @@
 	color: #000000
 }
 
+.specific-character-favorite-image {
+  height: 4rem;
+  width: 4rem
+}
+
 .selected-character-details-name {
   position: absolute;
   top: 20%; 

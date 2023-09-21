@@ -40,7 +40,7 @@ function App() {
             <Characters toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
           </>
           }/> 
-          <Route path='/character/:id' element={<CharacterDetails />}/> 
+          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite}/>}/> 
         </Routes>
       </section>
     </main> 
