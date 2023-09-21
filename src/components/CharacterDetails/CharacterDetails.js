@@ -7,7 +7,7 @@ import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 
-function CharacterDetails({toggleFavorite, isFavorite}) {
+function CharacterDetails({toggleFavorite, isFavorite, setError}) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const { id } = useParams()
 
@@ -15,7 +15,7 @@ function CharacterDetails({toggleFavorite, isFavorite}) {
   useEffect(() => {
     getSpecificCharacter(id)
     .then(data => setSelectedCharacter(data))
-    .catch(err => console.log(err))
+    .catch(error => setError(`${error.message}`))
   }, [id])
 
   const imgOpacity = isFavorite[selectedCharacter.name] ? 0.9 : 0.25
@@ -24,7 +24,7 @@ function CharacterDetails({toggleFavorite, isFavorite}) {
     opacity: imgOpacity
   }
 
-  return (
+  return Object.values(selectedCharacter).length > 0 &&(
     <article >
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
