@@ -1,4 +1,5 @@
 import './Navigation.css'
+import PropTypes from 'prop-types'
 
 function Navigation({isFavorite, setFilteredCharacters, characters}) {
   const viewFavorites = () => {
@@ -19,3 +20,9 @@ function Navigation({isFavorite, setFilteredCharacters, characters}) {
 }
 
 export default Navigation
+
+Navigation.propTypes = {
+  isFavorite: PropTypes.object.isRequired,
+  setFilteredCharacters: PropTypes.func.isRequired,
+  characters: PropTypes.array.isRequired
+}

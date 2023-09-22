@@ -1,10 +1,9 @@
 import './Character.css'
 import favorite from '../../assets/emojisky.com-16967011.png'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import Proptypes from 'prop-types'
 
-function Character({name, id, isFavorite, toggleFavorite, height, hairColor, skinColor, eyeColor, birthYear, gender}) {
-  
+function Character({name, id, isFavorite, toggleFavorite}) {
   const imgOpacity = isFavorite ? 0.9 : 0.25
 
   const styleFavoriteImage = {
@@ -25,3 +24,10 @@ function Character({name, id, isFavorite, toggleFavorite, height, hairColor, ski
 }
 
 export default Character
+
+Character.propTypes = {
+  name: Proptypes.string.isRequired,
+  id: Proptypes.number.isRequired,
+  isFavorite: Proptypes.bool,
+  toggleFavorite: Proptypes.func.isRequired
+}

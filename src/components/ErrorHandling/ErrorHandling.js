@@ -1,6 +1,7 @@
 import './ErrorHandling.css'
 import errorImg from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function ErrorHandling({error}) {
   return (
@@ -13,3 +14,7 @@ function ErrorHandling({error}) {
 }
 
 export default ErrorHandling
+
+ErrorHandling.propTypes = {
+  error: PropTypes.string
+}
