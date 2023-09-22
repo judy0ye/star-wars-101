@@ -17,7 +17,7 @@ function Character({name, id, isFavorite, toggleFavorite, height, hairColor, ski
       <div>
         <Link to={`/character/${id}`}>See more</Link>
         <button onClick={() => toggleFavorite(name)}>
-          <img className='favorite' style={styleFavoriteImage} src={favorite}></img>
+          <img className='favorite' alt='grogu with heart' style={styleFavoriteImage} src={favorite}></img>
         </button>
       </div>
     </div>
