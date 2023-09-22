@@ -26,7 +26,7 @@ function Character({name, id, isFavorite, toggleFavorite}) {
 
 export default Character
 
-Character.prototypes = {
+Character.propTypes = {
   name: Proptypes.string.isRequired,
   id: Proptypes.number.isRequired,
   isFavorite: Proptypes.func.isRequired,
