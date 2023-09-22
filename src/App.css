@@ -1,5 +1,6 @@
 .main-display {
-  display: flex
+  display: flex;
+  flex-direction: column;
 }
 
 /* .navigation {
@@ -48,3 +49,9 @@
     transform: rotate(360deg);
   }
 } */
+
+@media screen and (max-width: 1370px) {
+  .main-display{
+    margin: 3rem;
+  }
+}

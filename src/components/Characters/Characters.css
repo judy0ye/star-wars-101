@@ -2,6 +2,17 @@
   display: flex;
   flex-wrap: wrap;
   margin: 2rem;
-  gap: 1rem;
-  
+  gap: 2rem;
+  padding-left: 2rem
+  /* width: 14em;
+  height: 10em;
+  border: 3px solid black; */
+}
+
+
+@media screen and (max-width: 1371px) {
+  .characters-container{
+    margin: 3rem;
+    padding-left: 3.5rem
+  }
 }
