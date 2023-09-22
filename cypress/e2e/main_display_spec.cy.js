@@ -4,7 +4,11 @@ describe('template spec', () => {
     status: 200,
     fixture: 'main_display_mock'
   }).as('mainDisplay')
-  
+
+  cy.intercept('GET', 'https://swapi.dev/api/people/1', {
+    status: 200,
+    fixture: 'luke_skywalker_mock'
+  }).as('lukeSkywalker')
  })
   it('should show a header', () => {
     cy.visit('http://localhost:3000')
@@ -29,8 +33,6 @@ describe('template spec', () => {
     cy.get(':nth-child(1) > div > button > .favorite').should('have.css', 'opacity', '0.9')
     .get(':nth-child(1) > div > button > .favorite').click()
     cy.get(':nth-child(1) > div > button > .favorite').should('have.css', 'opacity', '0.25')
-    // cy.get(':nth-child(1) > div > a').click()
-    // .url().should('eq', 'http://localhost:3000/character/1')
   })
   it('should show Obi-Wan Kenobi as the last character and should toggle opacity upon click of image', () => {
     cy.visit('http://localhost:3000')
@@ -43,7 +45,7 @@ describe('template spec', () => {
     .get(':nth-child(3) > div > button > .favorite').click()
     cy.get(':nth-child(3) > div > button > .favorite').should('have.css', 'opacity', '0.25')
   })
-  it('should have a view favorites and view all button', () => {
+  it('should have a view favorites button and view all button', () => {
     cy.visit('http://localhost:3000')
     cy.wait('@mainDisplay')
     cy.get('.navigation-bar').first().contains('View Favorites')
@@ -56,5 +58,15 @@ describe('template spec', () => {
     .get('.favorite').should('have.css', 'opacity', '0.9')
     .get('.navigation-bar > :nth-child(2)').click()
     cy.get('.characters-container').find('.character-card').should('have.length', 3)
+  })
+  it('should bring user to a specific character page upon click of link and back to main display upon click of back button', () => {
+    cy.visit('http://localhost:3000')
+    cy.wait('@mainDisplay')
+    cy.get(':nth-child(1) > div > a').click()
+    cy.wait('@lukeSkywalker')
+    .url().should('eq', 'http://localhost:3000/character/1')
+    cy.get('article').contains('h2', 'Luke Skywalker')
+    cy.get('.back').click()
+    .url().should('eq', 'http://localhost:3000/')
   })
 })
