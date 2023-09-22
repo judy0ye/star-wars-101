@@ -1,13 +1,13 @@
 import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
 import backLink from '../../assets/emojisky.com-11247001.png'
-// import background from '../../assets/michael-marais-JLHyIwix46c-unsplash.jpg'
 import favorite from '../../assets/emojisky.com-16967011.png'
 import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
+import PropTypes from 'prop-types'
 
-function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
+function CharacterDetails({toggleFavorite, isFavorite, setError}) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const { id } = useParams()
 
@@ -24,7 +24,7 @@ function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
     opacity: imgOpacity
   }
 
-  return Object.values(selectedCharacter).length > 0 && selectedCharacter &&(
+  return Object.values(selectedCharacter).length > 0 && (
     <article >
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
@@ -54,3 +54,9 @@ function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
 }
 
 export default CharacterDetails
+
+CharacterDetails.propTypes = {
+  toggleFavorite: PropTypes.func.isRequired,
+  isFavorite: PropTypes.object.isRequired,
+  setError: PropTypes.func
+}

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Proptypes from 'prop-types'
 
 function Character({name, id, isFavorite, toggleFavorite}) {
-
   const imgOpacity = isFavorite ? 0.9 : 0.25
 
   const styleFavoriteImage = {
@@ -29,6 +28,6 @@ export default Character
 Character.propTypes = {
   name: Proptypes.string.isRequired,
   id: Proptypes.number.isRequired,
-  isFavorite: Proptypes.func.isRequired,
+  isFavorite: Proptypes.bool,
   toggleFavorite: Proptypes.func.isRequired
 }
