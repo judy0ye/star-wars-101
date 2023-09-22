@@ -1,5 +1,6 @@
 import './Characters.css'
 import Character from '../Character/Character'
+import Proptypes from 'prop-types'
 
 function Characters({filteredCharacters, characters, isFavorite, toggleFavorite}) {
   const characterCards = filteredCharacters.length > 0 && filteredCharacters.map(filteredCharacter => {
@@ -11,12 +12,6 @@ function Characters({filteredCharacters, characters, isFavorite, toggleFavorite}
       key={filteredCharacter.name}
       id={id}
       name={filteredCharacter.name}
-      height={filteredCharacter.height}
-      hairColor={filteredCharacter.hair_color}
-      skinColor={filteredCharacter.skin_color}
-      eyeColor={filteredCharacter.eye_color}
-      birthYear={filteredCharacter.birth_year}
-      gender={filteredCharacter.gender}
       isFavorite={isFavorite[filteredCharacter.name]}
       toggleFavorite={toggleFavorite}
     />)
@@ -27,3 +22,14 @@ function Characters({filteredCharacters, characters, isFavorite, toggleFavorite}
 }
 
 export default Characters
+
+Characters.propTypes = {
+  characters: Proptypes.array.isRequired,
+  filteredCharacters: Proptypes.arrayOf(
+    Proptypes.shape({
+      id: Proptypes.number,
+      name: Proptypes.string.isRequired,
+    })),
+  isFavorite: Proptypes.object.isRequired,
+  toggleFavorite: Proptypes.func.isRequired,
+}
