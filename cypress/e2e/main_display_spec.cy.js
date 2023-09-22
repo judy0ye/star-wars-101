@@ -1,11 +1,24 @@
-describe('template spec', () => {
+describe('main display', () => {
  beforeEach(() => {
   cy.intercept('GET', 'https://swapi.dev/api/people/?page=1', {
-    status: 200,
+    statusCode: 200,
     fixture: 'main_display_mock'
   }).as('mainDisplay')
   cy.visit('http://localhost:3000')
  })
+
+  it('should show a 500 level error if the server is down', () => {
+    cy.intercept('GET', 'https://swapi.dev/api/people/?page=1', {
+    statusCode: 500,
+    }).as('505error')
+    cy.visit('http://localhost:3000/')
+    cy.wait('@505error')
+    cy.get('h2').should('contain', '500: Unable to retrieve from server') 
+    .get('.error-img').should('have.attr', 'src')
+    .get('.retry').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+
   it('should show a header', () => {
     cy.wait('@mainDisplay')
     cy.get('header').within(() => {
@@ -52,7 +65,7 @@ describe('template spec', () => {
   })
   it('should bring user to a specific character page upon click of link and back to main display upon click of back button', () => {
     cy.intercept('GET', 'https://swapi.dev/api/people/1', {
-      status: 200,
+      statusCode: 200,
       fixture: 'luke_skywalker_mock'
     }).as('lukeSkywalker')
     

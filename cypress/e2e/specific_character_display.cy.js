@@ -1,15 +1,45 @@
 describe('template spec', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://swapi.dev/api/people/?page=1', {
-    status: 200,
+    statusCode: 200,
     fixture: 'main_display_mock'
-  }).as('mainDisplay')
+    }).as('mainDisplay')
     cy.visit('http://localhost:3000')
   })
 
+  it('should show an error if the wrong URL is entered', () => {
+    cy.intercept('GET', 'https://swapi.dev/api/peopl')
+    cy.visit('http://localhost:3000/characte')
+    cy.get('h2').should('contain', 'Sorry, this page does not exist')
+  })
+
+  it('should show a 500 level error if the server is down', () => {
+    cy.intercept('GET', 'https://swapi.dev/api/people/1', {
+    statusCode: 500,
+    }).as('505error')
+    cy.visit('http://localhost:3000/character/1')
+    cy.wait('@505error')
+    cy.get('h2').should('contain', '500: Unable to retrieve from server') 
+    .get('.error-img').should('have.attr', 'src')
+    .get('.retry').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+  
+  it('should show a 404 level error if the character is not found', () => {
+    cy.intercept('GET', 'https://swapi.dev/api/people/1', {
+      statusCode: 404,
+    }).as('404error')
+    cy.visit('http://localhost:3000/character/1')
+    cy.wait('@404error')
+    cy.get('h2').should('contain', '404: Unable to retrieve from server') 
+    .get('.error-img').should('have.attr', 'src')
+    .get('.retry').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+
   it('should have luke skywalker details', () => {
-    cy.intercept('https://swapi.dev/api/people/1', {
-    status: 200,
+    cy.intercept('GET', 'https://swapi.dev/api/people/1', {
+    statusCode: 200,
     fixture: 'luke_skywalker_mock'
   }).as('lukeSkywalker')
     cy.wait('@mainDisplay')  

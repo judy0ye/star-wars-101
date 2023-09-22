@@ -47,7 +47,7 @@ function App() {
               <Characters filteredCharacters={filteredCharacters} toggleFavorite={toggleFavorite} characters={characters} isFavorite={isFavorite} />
             </>
           }/> 
-          <Route path='/character/:id' element={<CharacterDetails toggleFavorite={toggleFavorite} isFavorite={isFavorite} setError={setError}/>}/> 
+          <Route path='/character/:id' element={<CharacterDetails error={error} toggleFavorite={toggleFavorite} isFavorite={isFavorite} setError={setError}/>}/> 
           <Route path='*' element={<ErrorHandling />}/>
         </Routes>
       </section>
