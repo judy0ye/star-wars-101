@@ -1,28 +1,17 @@
 import './Navigation.css'
-import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 
-function Navigation({isFavorite, setFilteredCharacters, characters}) {
-  const viewFavorites = () => {
-    const filtered = characters && characters.filter(character => isFavorite[character.name] )
-    setFilteredCharacters(filtered)
-  }
-
-  const viewAll = () => {
-    setFilteredCharacters(characters)
-  }
-
+function Navigation() {
   return(
     <section className='navigation-bar'>
-      <button className='view-fav-btn'onClick={viewFavorites}>View Favorites</button>
-      <button className='view-all-btn' onClick={viewAll}>View All</button>
+      <NavLink to={`/`} className='nav-link'>
+        View All
+      </NavLink>
+      <NavLink to={'/favorites'} className='nav-link'>
+        View Favorites
+      </NavLink>
     </section>
   )
 }
 
 export default Navigation
-
-Navigation.propTypes = {
-  isFavorite: PropTypes.object.isRequired,
-  setFilteredCharacters: PropTypes.func.isRequired,
-  characters: PropTypes.array.isRequired
-}
