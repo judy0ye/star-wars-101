@@ -1,17 +1,10 @@
 .navigation-bar {
-  /* border: 3px solid black; */
-  display: flex;
-  flex-direction: column;
-  width: 22em;
- } 
-
-/* .navigation-bar {
-
   display: flex;
   justify-content: space-between;
-}
+  margin: .5rem
+ } 
 
-.view-fav-btn, .view-all-btn {
+.view-fav, .view-all {
   background: linear-gradient(to bottom, #4c5a6a 5%, #e3f533 100%);
   border-radius: 10px;
   border: 2px solid #000000;
@@ -22,4 +15,4 @@
   padding: 0.5em 1em;
   margin-top: 0.5rem;
   text-decoration: none;
-} */
+}

@@ -58,7 +58,7 @@ export default CharacterDetails
 CharacterDetails.propTypes = {
   toggleFavorite: PropTypes.func.isRequired,
   selectedCharacter: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     height: PropTypes.string,
     hair_color: PropTypes.string,
     eye_color: PropTypes.string,
