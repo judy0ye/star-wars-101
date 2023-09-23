@@ -1,0 +1,41 @@
+.actions-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.favorite-character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid e3f533;
+  width: 15em;
+  height: 12em;
+  justify-content: space-between;
+  border-radius: 10px;
+  color:aliceblue;
+  background-color: #333333;
+  box-shadow: 0px 0px 4px 4px #bbcc4c;
+}
+
+.favorite {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.see-more, .delete {
+  background: linear-gradient(to bottom, #4c5a6a 5%, #e3f533 100%);
+  border-radius: 10px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.4em .8em;
+  text-decoration: none;
+}
+
+.delete {
+  padding: 0em .8em;
+}
