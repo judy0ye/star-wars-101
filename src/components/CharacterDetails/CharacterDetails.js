@@ -2,12 +2,10 @@ import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
 import backLink from '../../assets/emojisky.com-11247001.png'
 import favorite from '../../assets/emojisky.com-16967011.png'
-import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
 import { useEffect, useState } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
-import PropTypes from 'prop-types'
 
-function CharacterDetails({toggleFavorite, isFavorite, setError}) {
+function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const { id } = useParams()
 
@@ -24,7 +22,7 @@ function CharacterDetails({toggleFavorite, isFavorite, setError}) {
     opacity: imgOpacity
   }
 
-  return Object.values(selectedCharacter).length > 0 && (
+  return Object.values(selectedCharacter).length > 0 && selectedCharacter &&(
     <article >
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
@@ -36,8 +34,6 @@ function CharacterDetails({toggleFavorite, isFavorite, setError}) {
           <img className='specific-character-favorite-image' style={styleFavoriteImage} src={favorite}></img>
         </button>
       </div>
-      
-      <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>
         <div className='selected-character-details'>
@@ -54,9 +50,3 @@ function CharacterDetails({toggleFavorite, isFavorite, setError}) {
 }
 
 export default CharacterDetails
-
-CharacterDetails.propTypes = {
-  toggleFavorite: PropTypes.func.isRequired,
-  isFavorite: PropTypes.object.isRequired,
-  setError: PropTypes.func
-}

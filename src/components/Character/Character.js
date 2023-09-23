@@ -14,11 +14,11 @@ function Character({name, id, isFavorite, toggleFavorite}) {
     <div className='character-card'>
       <h2>{name}</h2> 
       <div>
-        <Link to={`/character/${id}`}>See more</Link>
+        <Link className='see-more' to={`/character/${id}`} >See more</Link>
+      </div>
         <button onClick={() => toggleFavorite(name)}>
           <img className='favorite' alt='grogu with heart' style={styleFavoriteImage} src={favorite}></img>
         </button>
-      </div>
     </div>
   )
 }

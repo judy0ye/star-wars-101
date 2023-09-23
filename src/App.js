@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import mainBackground from './assets/emmanuel-denier-YiXsjwJKXmo-unsplash.jpg'
 import Header from './components/Header/Header';
 import { getCharacters } from './apiCalls';
 import Characters from './components/Characters/Characters';
@@ -30,7 +31,7 @@ function App() {
   const toggleFavorite = (name) => {
     const updatedFavorites = {...isFavorite}
     updatedFavorites[name] = !updatedFavorites[name]
-    
+  
     setIsFavorite(updatedFavorites)
   }
 
@@ -39,7 +40,7 @@ function App() {
     <main>
       <Header />
       {error && <ErrorHandling error={error}/>}
-      <section className='main-display'>
+      <section className='main-display' style={{'--backdrop-img': `url(${mainBackground})` }}>
         <Routes>
           <Route path='/' element={!error &&
             <>

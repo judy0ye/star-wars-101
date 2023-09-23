@@ -13,8 +13,8 @@ function Navigation({isFavorite, setFilteredCharacters, characters}) {
 
   return(
     <section className='navigation-bar'>
-      <button onClick={viewFavorites}>View Favorites</button>
-      <button onClick={viewAll}>View All</button>
+      <button className='view-fav-btn'onClick={viewFavorites}>View Favorites</button>
+      <button className='view-all-btn' onClick={viewAll}>View All</button>
     </section>
   )
 }

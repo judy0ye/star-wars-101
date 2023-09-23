@@ -1,19 +1,31 @@
 .character-card {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
   align-items: center;
-  width: 15em
+  border: 3px solid e3f533;
+  width: 15em;
+  height: 12em;
+  justify-content: space-between;
+  border-radius: 10px;
+  color:aliceblue;
+  background-color: #333333;
+  box-shadow: 0px 0px 4px 4px #bbcc4c;
 }
 
 .favorite {
   height: 3em;
   width: 3em;
-  
 }
 
-/* .favorite:active {
-  height: 2em;
-  width: 2em;
-  opacity: 90%
-} */
+.see-more {
+  background: linear-gradient(to bottom, #4c5a6a 5%, #e3f533 100%);
+  border-radius: 10px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.4em .8em;
+
+  text-decoration: none;
+}

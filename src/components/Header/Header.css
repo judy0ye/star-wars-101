@@ -13,3 +13,20 @@ h1 {
   /* text-shadow: 2px 4px 1.5px rgba(163, 163, 163, 0.98) */
 }
 
+@media screen and (max-height: 695px) {
+  h1 {
+    font-size: 2.9em; 
+  }
+}
+
+@media screen and (max-width: 520px) {
+  h1 {
+    font-size: 2.6em; 
+  }
+}
+
+@media screen and (max-height: 525px) {
+  h1 {
+    font-size: 2.2em; 
+  }
+}
