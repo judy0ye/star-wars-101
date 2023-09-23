@@ -2,27 +2,28 @@ import { Link, useParams } from 'react-router-dom'
 import './CharacterDetails.css'
 import backLink from '../../assets/emojisky.com-11247001.png'
 import favorite from '../../assets/emojisky.com-16967011.png'
-import { useEffect, useState } from 'react'
+import background from '../../assets/martin-reisch-ddEBSlXB4YQ-unsplash.jpg'
+import { useEffect } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
+import PropTypes from 'prop-types'
 
-function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
-  const [selectedCharacter, setSelectedCharacter] = useState({})
+function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
   const { id } = useParams()
-
   
   useEffect(() => {
-    getSpecificCharacter(id)
-    .then(data => setSelectedCharacter(data))
-    .catch(error => setError(`${error.message}`))
-  }, [id])
+    const fetchData = async () => {
+      try {
+        const characterDetails = await getSpecificCharacter(id)
+        setSelectedCharacter(characterDetails);
+      } catch (error) {
+        setError(`${error.message}`);
+      }
+    };
 
-  const imgOpacity = isFavorite[selectedCharacter.name] ? 0.9 : 0.25
- 
-  const styleFavoriteImage = {
-    opacity: imgOpacity
-  }
+    fetchData();
+  }, [id]);
 
-  return Object.values(selectedCharacter).length > 0 && selectedCharacter &&(
+  return Object.values(selectedCharacter).length > 0 && (
     <article >
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
@@ -31,9 +32,12 @@ function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
       </Link>
       <div className='specific-character-favorite'>
         <button onClick={() => toggleFavorite(selectedCharacter.name)}>
-          <img className='specific-character-favorite-image' style={styleFavoriteImage} src={favorite}></img>
+          <img className='specific-character-favorite-image' 
+            style={{ opacity: isFavorite.includes(selectedCharacter.name) ? 0.9 : 0.25 }}
+          src={favorite}></img>
         </button>
       </div>
+      <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>
         <div className='selected-character-details'>
@@ -50,3 +54,19 @@ function CharacterDetails({toggleFavorite, isFavorite, setError, error}) {
 }
 
 export default CharacterDetails
+
+CharacterDetails.propTypes = {
+  toggleFavorite: PropTypes.func.isRequired,
+  selectedCharacter: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    height: PropTypes.string,
+    hair_color: PropTypes.string,
+    eye_color: PropTypes.string,
+    skin_color: PropTypes.string,
+    birth_year: PropTypes.string,
+    gender: PropTypes.string
+  }),
+  setSelectedCharacter: PropTypes.func,
+  isFavorite: PropTypes.array.isRequired,
+  setError: PropTypes.func
+}

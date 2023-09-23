@@ -1,35 +1,21 @@
-function getCharacters() {
+const getCharacters = async () => {
   let pageNum = 1
-  const characters = []
-
-  // const fetchAllCharcters = () => {
-    return fetch(`https://swapi.dev/api/people/?page=${pageNum}`)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error (`${res.status}: Unable to retrieve from server`)
-      }
-      return res.json()
-    })
-  //   .then(data => {
-  //     characters.push(...data.results)
-  //     if (data.next) {
-  //       pageNum++
-  //       return fetchAllCharcters()
-  //     }
-  //     return characters
-  //   })
-  // }
-  // return fetchAllCharcters()
+  
+  const res = await fetch(`https://swapi.dev/api/people/?page=${pageNum}`)
+  if (!res.ok) {
+    throw new Error (`${res.status}: Unable to retrieve from server`)
+  }
+  const data = await res.json()
+  return data
 }
 
-function getSpecificCharacter(id) {
-  return fetch(`https://swapi.dev/api/people/${id}`)
-  .then(res => {
-    if (!res.ok) {
-      throw new Error (`${res.status}: Unable to retrieve from server`)
-    }
-    return res.json()
-  })
+const getSpecificCharacter = async (id) => {
+  const res = await fetch(`https://swapi.dev/api/people/${id}`)
+  if (!res.ok) {
+    throw new Error (`${res.status}: Unable to retrieve from server`)
+  }
+  const data = await res.json()
+  return data
 }
 
 export {

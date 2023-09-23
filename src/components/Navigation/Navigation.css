@@ -1,4 +1,11 @@
 .navigation-bar {
+  /* border: 3px solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 22em;
+ } 
+
+/* .navigation-bar {
 
   display: flex;
   justify-content: space-between;
@@ -15,4 +22,4 @@
   padding: 0.5em 1em;
   margin-top: 0.5rem;
   text-decoration: none;
-}
+} */
