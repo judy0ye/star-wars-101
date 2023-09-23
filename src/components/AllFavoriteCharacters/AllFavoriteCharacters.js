@@ -22,9 +22,9 @@ function AllFavoriteCharacters({characters, isFavorite, setIsFavorite}) {
       />)
   })
  
-    return (
+    return characterCards.length > 0 ? (
       <section className='characters-container'>{characterCards}</section>
-    )
+    ): <h2 className='no-favorites'>  No Favorites Yet</h2>
 }
 
 export default AllFavoriteCharacters
@@ -33,7 +33,7 @@ AllFavoriteCharacters.propTypes = {
   characters: Proptypes.arrayOf(
     Proptypes.shape({
       id: Proptypes.number,
-      name: Proptypes.string.isRequired,
+      name: Proptypes.string,
     })),
   isFavorite: Proptypes.array.isRequired,
   setIsFavorite: Proptypes.func.isRequired,
