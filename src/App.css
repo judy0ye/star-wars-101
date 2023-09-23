@@ -1,6 +1,10 @@
 .main-display {
   display: flex;
   flex-direction: column;
+  background-image: var(--backdrop-img);
+  padding-top: 45rem;
+  background-size: cover;
+  background-position: center; 
 }
 
 /* .navigation {
