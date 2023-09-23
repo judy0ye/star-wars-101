@@ -31,7 +31,7 @@ function App() {
   const toggleFavorite = (name) => {
     const updatedFavorites = {...isFavorite}
     updatedFavorites[name] = !updatedFavorites[name]
-    console.log(updatedFavorites)
+  
     setIsFavorite(updatedFavorites)
   }
 

@@ -2,10 +2,14 @@
   display: flex;
   flex-direction: column;
   background-image: var(--backdrop-img);
-  padding-top: 45rem;
   background-size: cover;
   background-position: center; 
+  height: 100vh;
+  width: 100vw;
+  overflow: auto
 }
+
+
 
 /* .navigation {
   display: flex;
@@ -54,8 +58,8 @@
   }
 } */
 
-@media screen and (max-width: 1370px) {
+/* @media screen and (max-width: 1370px) {
   .main-display{
     margin: 3rem;
   }
-}
+} */

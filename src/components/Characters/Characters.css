@@ -1,18 +1,8 @@
 .characters-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 2rem;
-  gap: 2rem;
-  padding-left: 2rem
-  /* width: 14em;
-  height: 10em;
-  border: 3px solid black; */
+  justify-content: center;
+  margin: 2.5rem;
+  gap: 2.5rem;
 }
 
-
-@media screen and (max-width: 1371px) {
-  .characters-container{
-    margin: 3rem;
-    padding-left: 3.5rem
-  }
-}
