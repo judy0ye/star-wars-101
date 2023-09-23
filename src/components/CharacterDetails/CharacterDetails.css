@@ -83,6 +83,20 @@
  
   }
 }
+
+@media screen and (min-width: 900px) {
+  .selected-character-details{
+   display: flex;
+   gap: 2rem;  
+   align-items: center;
+   margin: 0 10rem
+  }
+  .selected-character-details-container {
+    position: relative;
+    margin-top: 20rem;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .selected-character-details{
    display: flex;
@@ -234,7 +248,7 @@
     top: 20%
   }
   .back-to-main-link {
-    left: 1%; 
+    left: 3%; 
     top: 20%
   }
   .selected-character-details-container {
@@ -242,8 +256,9 @@
     margin-top: 11rem;
   }
   .selected-character-details-name {
-    font-size: 1.8em;
-    top: 17%
+    font-size: 1.7em;
+    top: 17%;
+    padding: .3em;
   }
 }
 
@@ -253,16 +268,16 @@
     top: 21%
   }
   .specific-character-favorite-image {
-    height: 3.3rem;
-    width: 3.3rem
+    height: 3.2rem;
+    width: 3.2rem
   }
   .back-to-main-link {
     left: 1%; 
     top: 21.5%
   }
   .back-image {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 3.2rem;
+    width: 3.2rem;
     margin-left: 3.5rem
   }
   .selected-character-details-container {
@@ -271,8 +286,9 @@
   }
 
   .selected-character-details-name {
-    font-size: 1.5em;
-    top: 18%
+    font-size: 1.4em;
+    top: 18%;
+    padding: .4em
   }
 
   .selected-character-details {
