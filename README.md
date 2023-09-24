@@ -1,7 +1,8 @@
 <div align="center">
 
 # Star Wars 101
-**Created by **[Judy Ye](https://github.com/judy0ye)**,
+**Created by [Judy Ye](https://github.com/judy0ye)**
+
 [![LinkedIn](https://img.shields.io/badge/Judy-blue?style=for-the-badge&logo=LinkedIn&logoColor=black)](https://www.linkedin.com/in/judy0ye)
 
 </div>
