@@ -21,6 +21,7 @@ function App() {
   
   useEffect(() => {
     setError('')
+    setSelectedCharacter({})
   }, [location])
     
   useEffect(() => {
