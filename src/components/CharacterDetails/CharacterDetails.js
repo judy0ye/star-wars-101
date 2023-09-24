@@ -24,7 +24,8 @@ function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharact
   }, [id]);
 
   return Object.values(selectedCharacter).length > 0 && (
-    <article >
+    <article className='character-display' style={{'--backdrop-img': `url(${background})` }}>
+      
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
           <img className='back-image'src={backLink} />Back to Main
@@ -37,7 +38,6 @@ function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharact
           src={favorite}></img>
         </button>
       </div>
-      <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>
         <div className='selected-character-details'>

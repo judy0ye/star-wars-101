@@ -14,6 +14,7 @@ import addCharacterId from './utils';
 function App() {
   const [characters, setCharacters] = useState([])
   const [isFavorite, setIsFavorite] = useState([])
+  
   const [error, setError] = useState('')
   const location = useLocation().pathname
   const [selectedCharacter, setSelectedCharacter] = useState({})
@@ -23,6 +24,7 @@ function App() {
   }, [location])
     
   useEffect(() => {
+    setIsLoading(false)
     const fetchData = async () => {
       try {
         const charactersData = await getCharacters();
