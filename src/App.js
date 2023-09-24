@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-
 import Header from './components/Header/Header';
 import { getCharacters } from './apiCalls';
 import Characters from './components/Characters/Characters';
@@ -10,11 +9,12 @@ import CharacterDetails from './components/CharacterDetails/CharacterDetails';
 import Navigation from './components/Navigation/Navigation';
 import ErrorHandling from './components/ErrorHandling/ErrorHandling';
 import addCharacterId from './utils';
+import Loading from './components/Loading/Loading';
 
 function App() {
   const [characters, setCharacters] = useState([])
   const [isFavorite, setIsFavorite] = useState([])
-  
+  const [isloading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const location = useLocation().pathname
   const [selectedCharacter, setSelectedCharacter] = useState({})
@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     setIsLoading(false)
     const fetchData = async () => {
+      setIsLoading(true)
       try {
         const charactersData = await getCharacters();
         const filteredCharacters = addCharacterId(charactersData.results);
@@ -33,6 +34,7 @@ function App() {
       } catch (error) {
         setError(`${error.message}`);
       }
+      setIsLoading(false)
     };
   
     fetchData();
@@ -48,10 +50,11 @@ function App() {
   return (
     <main>
       <Header />
+      {isloading && <Loading />}
       {error && <ErrorHandling error={error}/>}
       <section>
         <Routes>
-          <Route path='/' element={!error &&
+          <Route path='/' element={!error && !isloading &&
             <>
               <Navigation/> 
                 <Characters 
@@ -78,6 +81,8 @@ function App() {
             setSelectedCharacter={setSelectedCharacter} 
             isFavorite={isFavorite} 
             setError={setError}
+            setIsLoading={setIsLoading}
+            isloading={isloading}
           />}
         /> 
           <Route path='*' element={<ErrorHandling />}/>

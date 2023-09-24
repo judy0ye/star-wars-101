@@ -7,17 +7,20 @@ import { useEffect } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 import PropTypes from 'prop-types'
 
-function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
+function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
   const { id } = useParams()
   
   useEffect(() => {
+    setIsLoading(false)
     const fetchData = async () => {
+      setIsLoading(true)
       try {
         const characterDetails = await getSpecificCharacter(id)
         setSelectedCharacter(characterDetails);
       } catch (error) {
         setError(`${error.message}`);
       }
+      setIsLoading(false)
     };
 
     fetchData();
@@ -25,7 +28,6 @@ function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharact
 
   return Object.values(selectedCharacter).length > 0 && (
     <article className='character-display' style={{'--backdrop-img': `url(${background})` }}>
-      
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
           <img className='back-image'src={backLink} />Back to Main
@@ -68,5 +70,6 @@ CharacterDetails.propTypes = {
   }),
   setSelectedCharacter: PropTypes.func,
   isFavorite: PropTypes.array.isRequired,
-  setError: PropTypes.func
+  setError: PropTypes.func,
+  setIsLoading: PropTypes.func
 }
