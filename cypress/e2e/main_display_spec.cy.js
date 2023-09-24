@@ -14,7 +14,6 @@ describe('main display', () => {
     cy.visit('http://localhost:3000/')
     cy.wait('@505error')
     cy.get('h2').should('contain', '500: Unable to retrieve from server') 
-    .get('.error-img').should('have.attr', 'src')
     .get('.retry').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })

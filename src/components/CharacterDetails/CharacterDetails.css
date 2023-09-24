@@ -79,6 +79,7 @@
   opacity: 95%;
   gap: 3rem;  
   border-radius: 10px;
+  font-size: 1.5em
 }
 
 @media screen and (max-width: 1025px) {
