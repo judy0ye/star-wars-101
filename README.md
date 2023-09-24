@@ -29,7 +29,7 @@ npm start
 
 .....OR:
 
-See the deployed project [here]()
+See the deployed project [here](https://star-wars-101.vercel.app/)
 
 
 ## 📚 Learning Goals
