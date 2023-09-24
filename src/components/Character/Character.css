@@ -17,6 +17,10 @@
   width: 3em;
 }
 
+.favorite-button {
+  cursor: pointer;
+}
+
 .see-more {
   background: linear-gradient(to bottom, #4c5a6a 5%, #e3f533 100%);
   border-radius: 10px;
@@ -26,6 +30,5 @@
   font-size: 1em;
   font-weight: bold;
   padding: 0.4em .8em;
-
   text-decoration: none;
 }

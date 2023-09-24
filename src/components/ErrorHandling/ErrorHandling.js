@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 
 function ErrorHandling({error}) {
   return (
-    <div className='error'>
+    <div className='error-display' style={{'--backdrop-img': `url(${errorImg})` }}>
       {error ? <h2>{error}</h2> : <h2>Sorry, this page does not exist</h2>}
-      <img className='error-img' src={errorImg} />
+      {/* <img className='error-img' src={errorImg} /> */}
       <Link className='retry' to={'/'}>Retry</Link>
     </div> 
   )

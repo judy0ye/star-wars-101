@@ -27,7 +27,11 @@
   right: 1%; 
   transform: translate(-50%, -50%);
 	text-decoration:none;
-	color: #000000
+	color: #000000; 
+}
+
+.specific-character-favorite-button {
+  cursor: pointer;
 }
 
 .specific-character-favorite-image {

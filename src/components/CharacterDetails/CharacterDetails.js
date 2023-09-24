@@ -31,7 +31,7 @@ function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharact
         </div>
       </Link>
       <div className='specific-character-favorite'>
-        <button onClick={() => toggleFavorite(selectedCharacter.name)}>
+        <button className='specific-character-favorite-button' onClick={() => toggleFavorite(selectedCharacter.name)}>
           <img className='specific-character-favorite-image' 
             style={{ opacity: isFavorite.includes(selectedCharacter.name) ? 0.9 : 0.25 }}
           src={favorite}></img>
