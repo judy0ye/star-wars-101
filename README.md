@@ -32,6 +32,7 @@ npm start
 See the deployed project [here](https://star-wars-101.vercel.app/)
 
 
+
 ## 📚 Learning Goals
 
 - Gain competency with React fundamentals
@@ -46,7 +47,7 @@ See the deployed project [here](https://star-wars-101.vercel.app/)
   
   | Description | Screenshot |
   |------------ | -----------|
-  | <h3 align="center">Home Page and Selected Character| ![starwars101](https://github.com/judy0ye/star-wars-101/assets/129805348/fe93fe43-11f2-415c-ba88-7293a2fce52d)
+  | <h3 align="center">Home Page and Selected Character| ![starwars101](https://github.com/judy0ye/star-wars-101/assets/129805348/6aa995b0-a0d3-4236-a99b-09165720b93b)
 
 
   
@@ -83,4 +84,6 @@ Photo by <a href="https://unsplash.com/@michael_marais?utm_source=unsplash&utm_m
 
 
 Photo by <a href="https://unsplash.com/@sounce_cosplay?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emmanuel Denier</a> on <a href="https://unsplash.com/photos/YiXsjwJKXmo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Character Photos from <a href="https://www.starwars.com/">https://www.starwars.com/</a>
   
