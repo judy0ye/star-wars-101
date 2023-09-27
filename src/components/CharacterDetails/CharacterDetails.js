@@ -30,11 +30,14 @@ function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setS
 
   return Object.values(selectedCharacter).length > 0 && (
     <article className='character-display' style={{'--backdrop-img': `url(${background})` }}>
-      <Link className='back-to-main-link' to={'/'}>
-        <div className='back'>
-          <img className='back-image'src={backLink} />Back to Main
+      <section className='back-and-fav-button'>
+        <div className='back-container'>
+         <Link className='back-to-main-link' to={'/'}>
+            <div className='back'>
+              <img className='back-image'src={backLink} />Back to Main
+            </div>
+          </Link>
         </div>
-      </Link>
       <div className='specific-character-favorite'>
         <button className='specific-character-favorite-button' onClick={() => toggleFavorite(selectedCharacter.name)}>
           <img className='specific-character-favorite-image' 
@@ -42,9 +45,12 @@ function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setS
           src={favorite}></img>
         </button>
       </div>
-      <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
+      </section>
       <div className='selected-character-details-container'>
-        <img src={img}/>
+        <div className='selected-character-image-and-name'>
+          <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
+          <img className='characters' src={img} alt={selectedCharacter.name}/>
+        </div>
         <div className='selected-character-details'>
           <p>Height: {selectedCharacter.height} cm</p>
           <p>Hair Color: {selectedCharacter.hair_color}</p>

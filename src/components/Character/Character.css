@@ -22,7 +22,6 @@
 .favorite {
   height: 3em;
   width: 3em;
-
 }
 
 .favorite-button {
@@ -40,4 +39,18 @@
   font-weight: bold;
   padding: 0.4em .8em;
   text-decoration: none;
+}
+
+@media screen and (max-width: 315px) {
+  .character-card {
+    border: 2px solid e3f533;
+    padding: 1em 0em;
+    width: 19em;
+    height: 20em;
+  }
+  .character-images {
+    width: 15em;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
 }
