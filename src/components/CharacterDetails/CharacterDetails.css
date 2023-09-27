@@ -1,43 +1,31 @@
 .character-display{
   background-image: var(--backdrop-img);
-  padding-top: 50rem;
   background-size: cover;
   background-position: center; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  overflow: auto;
 }
 
-.back-to-main-link {
-  position: absolute;
-  top: 23%; 
-  left: 2%; 
-  transform: translate(-50%, -50%);
-	text-decoration:none;
-	color: black;
+.back-and-fav-button {
+  display: flex;
+  align-items: center;
+  width: 95vw;
+  justify-content: space-between;
+  padding-bottom: 2rem;
 }
 
 .back-image {
   height: 4rem;
   width: 4rem;
-  margin-left: 5rem
 }
 
 .back {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-}
-
-.specific-character-favorite {
-  display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
-  top: 22%; 
-  right: 1%; 
-  transform: translate(-50%, -50%);
-	text-decoration:none;
-	color: #000000; 
+  align-items: center;
 }
 
 .specific-character-favorite-button {
@@ -50,28 +38,42 @@
 }
 
 .selected-character-details-name {
-  z-index: 1;
   font-size: 2.5em;
   color: #f0f8ff;
-  background-color: #1e1c1c;
-  opacity: 90%;
   text-align: center;
   font-weight: bolder;
   padding: .5em;
-  box-shadow: inset -1px 1px 20px 4px rgba(226, 245, 51, 0.887);
-  border-radius: 10px;
-  margin-top: -45rem
 }
 
 .selected-character-details-container {
-  margin-top: -10rem;
- 
+  display: flex;
+  align-items: center;
+  /* box-shadow: inset -1px 1px 20px 4px rgba(226, 245, 51, 0.887); */
+}
+
+.characters {
+  width: 50rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 4px black;
+}
+
+.selected-character-image-and-name {
+  background-color: #1e1c1c;
+  opacity: 95%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  width: 55rem;
+  height: 47rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .selected-character-details {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 10rem;
+  margin: 0 1rem;
   border: 3px solid aliceblue;
   color: aliceblue;
   padding: 2em;
@@ -79,234 +81,152 @@
   opacity: 95%;
   gap: 3rem;  
   border-radius: 10px;
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
-@media screen and (max-width: 1025px) {
-  .selected-character-details{
-   display: flex;
-   flex-direction: row;
-   gap: 2rem;  
-   align-items: center;
-   margin: 0 10rem
-  }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 20rem;
- 
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .selected-character-details{
-   display: flex;
-   gap: 2rem;  
-   align-items: center;
-   margin: 0 10rem
-  }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 20rem;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .selected-character-details{
-   display: flex;
-   flex-direction: column;
-   gap: 2rem;  
-   align-items: center;
-   margin: 0 10rem
-  }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 10rem;
-  }
-  .selected-character-details {
-    position: relative;
-    padding: 2em 5em;
-  }
-
-}
-
-@media screen and (max-height: 730px) {
-  .specific-character-favorite {
-    top: 23%; 
-  }
-  .back-to-main-link {
-    top: 24%; 
-  }
-}
-@media screen and (max-height: 695px) {
-  .specific-character-favorite {
-    top: 25%; 
-  }
-  .back-to-main-link {
-    top: 26%; 
-  }
-}
-
-@media screen and (max-height: 650px) {
-  .specific-character-favorite {
-    top: 27%; 
-  }
-  .back-to-main-link {
-    top: 28%; 
-  }
-  .selected-character-details-name {
-    top: 24%
-  }
-}
-@media screen and (max-height: 575px) {
-  .specific-character-favorite {
-    top: 30%; 
-  }
-  .back-to-main-link {
-    top: 31%; 
-  }
-  .selected-character-details-name {
-    top: 25%
-  }
-
-}
-@media screen and (max-height: 425px) {
-  .specific-character-favorite {
-    top: 35%; 
-  }
-  .back-to-main-link {
-    top: 36%; 
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 9rem;
-  }
-
-  .selected-character-details-name {
-    font-size: 2.1em;
-  }
-
+ @media screen and (max-width: 1175px) {
   .selected-character-details {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 2rem;
-    padding: 3em;
+    flex-direction: row;
   }
-}
-
-
-@media screen and (max-width: 565px) {
   .selected-character-details-container {
-    position: relative;
-    margin-top: 9rem;
-  }
-
-  .selected-character-details-name {
-    font-size: 2.1em;
-  }
-
-  .selected-character-details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 8rem;
-    padding: 1em;
+    gap: 1rem;
+  }
+}
+ @media screen and (max-width: 915px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 45rem;
+    height: 39rem;
+  }
+  .characters {
+    width: 40rem;
+  }
+  .selected-character-details {
+    padding: 1.5em;
+    font-size: 1.4em; 
   }
 }
 
-@media screen and (max-width: 520px) {
-  .selected-character-details-name {
-    font-size: 2em;
+ @media screen and (max-width: 755px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 41rem;
+    height: 33rem;
   }
-  .specific-character-favorite {
-    right: -7%
+  .selected-character-details-name {
+    font-size: 2.3em;
+    padding: .35em;
+  }
+  .characters {
+    width: 38rem;
+  }
+  .selected-character-details {
+    padding: 1.4em;
+    font-size: 1.3em; 
+  }
+}
+
+ @media screen and (max-width: 685px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 35rem;
+    height: 27rem;
+  }
+  .selected-character-details-name {
+    font-size: 2.2em;
+    padding: .3em;
+  }
+  .characters {
+    width: 29rem;
+  }
+  .selected-character-details {
+    padding: 1.2em;
+    font-size: 1.15em; 
   }
   .specific-character-favorite-image {
-    height: 3.5rem;
-    width: 3.5rem
-  }
-  .back-to-main-link {
-    left: 1%; 
-
+    height: 3rem;
+    width: 3rem
   }
   .back-image {
-    height: 4rem;
-    width: 4rem;
-    margin-left: 3.5rem
+    height: 3rem;
+    width: 3rem;
   }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 8rem;
+  .back-to-main-link {
+    font-size: .85em;
   }
-
+}
+ @media screen and (max-width: 635px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 30rem;
+    height: 22rem;
+  }
+  .selected-character-details-name {
+    font-size: 2em;
+    padding: .2em;
+  }
+  .characters {
+    width: 24rem;
+  }
   .selected-character-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 6rem;
-    padding: 1em;
-
+    padding: .8em;
+    font-size: 1em;
+    gap: 2rem;   
+  }
+  .character-display {
+    height: 90vh;
   }
 }
 
-@media screen and (max-width: 415px) {
-  .specific-character-favorite {
-    right: -7%;
-    top: 20%
-  }
-  .back-to-main-link {
-    left: 3%; 
-    top: 20%
-  }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 11rem;
+ @media screen and (max-width: 500px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 21rem;
+    height: 17rem;
   }
   .selected-character-details-name {
     font-size: 1.7em;
-    top: 17%;
-    padding: .3em;
+    padding: .17em;
+  }
+  .characters {
+    width: 18rem;
+  }
+  .selected-character-details {
+    padding: .45em;
+    font-size: .9em;
+    gap: 1rem;   
+  }
+  .character-display {
+    height: 90vh;
   }
 }
 
-@media screen and (max-width: 376px) {
-  .specific-character-favorite {
-    right: -7%;
-    top: 21%
+ @media screen and (max-width: 385px) {
+  .selected-character-image-and-name {
+    background-color: #1e1c1c;
+    width: 17rem;
+    height: 14rem;
+    border: 2px solid aliceblue;
   }
-  .specific-character-favorite-image {
-    height: 3.2rem;
-    width: 3.2rem
-  }
-  .back-to-main-link {
-    left: 1%; 
-    top: 21.5%
-  }
-  .back-image {
-    height: 3.2rem;
-    width: 3.2rem;
-    margin-left: 3.5rem
-  }
-  .selected-character-details-container {
-    position: relative;
-    margin-top: 7rem;
-  }
-
   .selected-character-details-name {
-    font-size: 1.4em;
-    top: 18%;
-    padding: .4em
+    font-size: 1.5em;
+    padding: .15em;
   }
-
+  .characters {
+    width: 15rem;
+  }
   .selected-character-details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 4rem;
-    padding: 1em;
-
+    padding: .45em 3em;
+    font-size: .9em;
+    gap: 0rem;  
+    border: 2px solid aliceblue; 
+  }
+  .character-display {
+    height: 90vh;
   }
 }
