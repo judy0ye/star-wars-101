@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   border: 3px solid e3f533;
-  width: 15em;
-  height: 12em;
+  padding: 1em 0em;
+  width: 22em;
+  height: 20em;
   justify-content: space-between;
   border-radius: 10px;
   color:aliceblue;
@@ -12,13 +13,21 @@
   box-shadow: 0px 0px 4px 4px #bbcc4c;
 }
 
+.character-images {
+  width: 18em;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
 .favorite {
   height: 3em;
   width: 3em;
+
 }
 
 .favorite-button {
   cursor: pointer;
+  margin-top: 1em
 }
 
 .see-more {

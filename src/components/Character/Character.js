@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import Proptypes from 'prop-types'
 import favorite from '../../assets/emojisky.com-16967011.png'
 
-function Character({name, id, isFavorite, toggleFavorite}) {
+function Character({name, id, image, isFavorite, toggleFavorite}) {
   const opacity = isFavorite.includes(name) ? 0.9 : 0.25;
 
   return (
     <div className='character-card'>
+      <img className='character-images' src={image} alt={name}/>
       <h2>{name}</h2> 
       <div>
         <Link className='see-more' to={`/character/${id}`}>See more</Link>
