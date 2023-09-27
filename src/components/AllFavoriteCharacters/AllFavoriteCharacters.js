@@ -13,10 +13,12 @@ function AllFavoriteCharacters({characters, isFavorite, setIsFavorite}) {
   }   
 
   const characterCards = favoriteCharacters.map(character => {
+    const img = `/characterImages/${character.name}.jpeg`
     return (
       <FavoriteCard 
         key={character.name}
         id={character.id}
+        image={img}
         name={character.name}
         deleteFavorite={deleteFavorite}
       />)

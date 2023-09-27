@@ -32,7 +32,7 @@ function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setS
     <article className='character-display' style={{'--backdrop-img': `url(${background})` }}>
       <section className='back-and-fav-button'>
         <div className='back-container'>
-         <Link className='back-to-main-link' to={'/'}>
+         <Link className='back-to-main-link' to={'/'} >
             <div className='back'>
               <img className='back-image'src={backLink} />Back to Main
             </div>

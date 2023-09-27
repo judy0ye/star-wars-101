@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .back-and-fav-button {
@@ -15,6 +15,19 @@
   width: 95vw;
   justify-content: space-between;
   padding-bottom: 2rem;
+  margin: .5em;
+}
+
+.back-to-main-link{ 
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.back-container {
+  background-color: #333333;
+  border-radius: 20px;
+  border: black;
+  padding: .4em
 }
 
 .back-image {
