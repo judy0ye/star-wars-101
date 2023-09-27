@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
+  margin-bottom: .5em;
 }
 
 .favorite-character-card {
@@ -10,8 +11,8 @@
   flex-direction: column;
   align-items: center;
   border: 3px solid e3f533;
-  width: 15em;
-  height: 12em;
+  width: 22em;
+  height: 20em;
   justify-content: space-between;
   border-radius: 10px;
   color:aliceblue;
@@ -22,6 +23,12 @@
 .favorite {
   height: 2.5em;
   width: 2.5em;
+}
+
+.fav-image {
+  width: 15em;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 .see-more, .delete {
@@ -38,4 +45,18 @@
 
 .delete {
   padding: 0em .8em;
+}
+
+@media screen and (max-width: 315px) {
+  .favorite-character-card {
+    border: 2px solid e3f533;
+    padding: 1em 0em;
+    width: 19em;
+    height: 20em;
+  }
+  .fav-image {
+    width: 12em;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
 }
