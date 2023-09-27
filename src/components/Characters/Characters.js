@@ -1,6 +1,7 @@
 import './Characters.css'
 import Character from '../Character/Character'
 import Proptypes from 'prop-types'
+import mainBackground from '../../assets/emmanuel-denier-YiXsjwJKXmo-unsplash.jpg'
 
 function Characters({characters, isFavorite, toggleFavorite}) {
   const characterCards = characters.map((character) => {
@@ -14,7 +15,11 @@ function Characters({characters, isFavorite, toggleFavorite}) {
       />)
   })
   return (
-    <section className='characters-container'>{characterCards}</section>
+    <section className='container' style={{'--backdrop-img': `url(${mainBackground})` }}>
+      <div className='characters-container'>{characterCards}</div>
+    </section>
+    
+   
   )
 }
 

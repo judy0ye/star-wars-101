@@ -1,7 +1,7 @@
 header {
   display: flex;
   justify-content: center;
-  background: black
+  background: black;
 }
 
 h1 {
@@ -10,7 +10,6 @@ h1 {
   -webkit-text-stroke-width: .05em;
   -webkit-text-stroke-color: #e2f534;
   -webkit-text-fill-color: #0d0d0c;
-  /* text-shadow: 2px 4px 1.5px rgba(163, 163, 163, 0.98) */
 }
 
 @media screen and (max-height: 695px) {

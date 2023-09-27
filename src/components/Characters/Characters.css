@@ -1,8 +1,19 @@
+.container {
+  background-image: var(--backdrop-img);
+  background-size: cover;
+  background-position: center; 
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 0px 20px 10px rgb(255 255 255 / 31%);
+  background-attachment: fixed;
+  overflow: auto;
+}
+
 .characters-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2.5rem;
   gap: 2.5rem;
+ 
 }
 

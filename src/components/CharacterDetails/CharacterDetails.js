@@ -7,37 +7,39 @@ import { useEffect } from 'react'
 import { getSpecificCharacter } from '../../apiCalls'
 import PropTypes from 'prop-types'
 
-function CharacterDetails({toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
+function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
   const { id } = useParams()
   
   useEffect(() => {
+    setIsLoading(false)
     const fetchData = async () => {
+      setIsLoading(true)
       try {
         const characterDetails = await getSpecificCharacter(id)
         setSelectedCharacter(characterDetails);
       } catch (error) {
         setError(`${error.message}`);
       }
+      setIsLoading(false)
     };
 
     fetchData();
   }, [id]);
 
   return Object.values(selectedCharacter).length > 0 && (
-    <article >
+    <article className='character-display' style={{'--backdrop-img': `url(${background})` }}>
       <Link className='back-to-main-link' to={'/'}>
         <div className='back'>
           <img className='back-image'src={backLink} />Back to Main
         </div>
       </Link>
       <div className='specific-character-favorite'>
-        <button onClick={() => toggleFavorite(selectedCharacter.name)}>
+        <button className='specific-character-favorite-button' onClick={() => toggleFavorite(selectedCharacter.name)}>
           <img className='specific-character-favorite-image' 
             style={{ opacity: isFavorite.includes(selectedCharacter.name) ? 0.9 : 0.25 }}
           src={favorite}></img>
         </button>
       </div>
-      <div className='background-image' style={{'--backdrop-img': `url(${background})` }}></div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>
         <div className='selected-character-details'>
@@ -68,5 +70,6 @@ CharacterDetails.propTypes = {
   }),
   setSelectedCharacter: PropTypes.func,
   isFavorite: PropTypes.array.isRequired,
-  setError: PropTypes.func
+  setError: PropTypes.func,
+  setIsLoading: PropTypes.func
 }
