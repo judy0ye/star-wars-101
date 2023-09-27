@@ -9,7 +9,9 @@ import PropTypes from 'prop-types'
 
 function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setSelectedCharacter, isFavorite, setError}) {
   const { id } = useParams()
-  
+  const img = `/characterImages/${selectedCharacter.name}.jpeg`
+  console.log(selectedCharacter)
+
   useEffect(() => {
     setIsLoading(false)
     const fetchData = async () => {
@@ -42,6 +44,7 @@ function CharacterDetails({setIsLoading, toggleFavorite, selectedCharacter, setS
       </div>
       <h2 className='selected-character-details-name'>{selectedCharacter.name}</h2>
       <div className='selected-character-details-container'>
+        <img src={img}/>
         <div className='selected-character-details'>
           <p>Height: {selectedCharacter.height} cm</p>
           <p>Hair Color: {selectedCharacter.hair_color}</p>

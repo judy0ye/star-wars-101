@@ -5,7 +5,7 @@ import mainBackground from '../../assets/emmanuel-denier-YiXsjwJKXmo-unsplash.jp
 
 function Characters({characters, isFavorite, toggleFavorite}) {
   const characterCards = characters.map((character) => {
-    const img = `/characterImages/${character.id}.jpeg`
+    const img = `/characterImages/${character.name}.jpeg`
     return(
       <Character
         id={character.id}
