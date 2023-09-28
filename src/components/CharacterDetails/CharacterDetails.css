@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto
 }
 
 .back-and-fav-button {
@@ -14,7 +14,7 @@
   align-items: center;
   width: 95vw;
   justify-content: space-between;
-  padding-bottom: 2rem;
+  padding: 6.8rem 0 1rem;
   margin: .5em;
 }
 
@@ -55,17 +55,16 @@
   color: #f0f8ff;
   text-align: center;
   font-weight: bolder;
-  padding: .5em;
+  padding: .4em;
 }
 
 .selected-character-details-container {
   display: flex;
   align-items: center;
-  /* box-shadow: inset -1px 1px 20px 4px rgba(226, 245, 51, 0.887); */
 }
 
 .characters {
-  width: 50rem;
+  width: 45rem;
   border-radius: 5px;
   box-shadow: 0px 0px 4px 4px black;
 }
@@ -75,8 +74,8 @@
   opacity: 95%;
   border: 3px solid aliceblue;
   border-radius: 10px;
-  width: 55rem;
-  height: 47rem;
+  width: 48rem;
+  height: 37rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,10 +88,10 @@
   margin: 0 1rem;
   border: 3px solid aliceblue;
   color: aliceblue;
-  padding: 2em;
+  padding: .5em 1.5em;
   background-color: #1e1c1c;
   opacity: 95%;
-  gap: 3rem;  
+  gap: 1.5rem;  
   border-radius: 10px;
   font-size: 1.5em;
 }
@@ -171,6 +170,7 @@
     font-size: .85em;
   }
 }
+
  @media screen and (max-width: 635px) {
   .selected-character-image-and-name {
     background-color: #1e1c1c;
@@ -188,9 +188,6 @@
     padding: .8em;
     font-size: 1em;
     gap: 2rem;   
-  }
-  .character-display {
-    height: 90vh;
   }
 }
 
@@ -211,9 +208,6 @@
     padding: .45em;
     font-size: .9em;
     gap: 1rem;   
-  }
-  .character-display {
-    height: 90vh;
   }
 }
 
@@ -238,8 +232,5 @@
     font-size: .9em;
     gap: 0rem;  
     border: 2px solid aliceblue; 
-  }
-  .character-display {
-    height: 90vh;
   }
 }
