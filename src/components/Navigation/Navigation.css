@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: black;
+  margin-top: 7.5rem
  } 
 
 .view-fav, .view-all {
@@ -16,4 +17,16 @@
   margin: 0.5rem;
   text-decoration: none;
   
+}
+
+@media screen and (max-width: 520px) {
+  .navigation-bar {
+    margin-top: 6.5em; 
+  }
+}
+
+@media screen and (max-height: 525px) {
+  .navigation-bar {
+    margin-top: 5.5em; 
+  }
 }
