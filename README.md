@@ -15,7 +15,7 @@ New fan or current fan of Star Wars? You can view some of your favorite characte
 
 ```bash
 # Clone this repo to your local machine by running:
-git clone git@github.com:your_github_name/star-wars-101.git
+git clone git@github.com:your_github_username/star-wars-101.git
 
 # Cd into the root directory 
 cd star-wars-101
