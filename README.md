@@ -62,7 +62,6 @@ See the deployed project [here](https://star-wars-101.vercel.app/)
 ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
 ![Cypress](https://img.shields.io/badge/-Cypress-05122A?style=flat&logo=cypress)
 ![React Router](https://img.shields.io/badge/-React_Router-05122A?style=flat&logo=reactrouter)
-![Cypress](https://img.shields.io/badge/-Express.js-05122A?style=flat&logo=expressjs)
 
 
 ## 🧘‍♂️ Reflections
